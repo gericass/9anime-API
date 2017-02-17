@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
@@ -23,10 +24,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '9ohoun^xmd01+=zc93*2*(z**$^+$p04_z@r6g2$6+j*hq+^@#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
-
+#----------
+#ALLOWED_HOSTS = []
+#---------
 
 # Application definition
 
@@ -39,13 +41,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    #'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -126,4 +129,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
+
+# 追加した
+DATABASES['default'] = dj_database_url.config()
+# 追加した
+ALLOWED_HOSTS = ['*']
+# -----------
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.10/howto/static-files/
+
 STATIC_URL = '/static/'
+
+
+
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')  # PROJECT_ROOTはBASE_DIRだった
+
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),  # PROJECT_ROOTはBASE_DIRだった
+)
+
+#STATIC_URL = '/static/'
