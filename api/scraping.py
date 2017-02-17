@@ -77,5 +77,8 @@ def scrapingreq(year,page,season):
         yr = str(year)
         db = animedb(title=tit,title_jp=titj,year=yr,season=sea,url=lin,page=pg)
         db.save()
+
+    return 'done'
+    
   except:
-      pass
+      return'error'

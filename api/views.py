@@ -10,8 +10,8 @@ from .serializer import animedbSerializer
 
 
 def scraping(request,year,page,season):
-    scrapingreq(str(year),str(page),str(season))
-    return HttpResponse('done')
+    res = scrapingreq(str(year),str(page),str(season))
+    return HttpResponse(res)
 
 
 
