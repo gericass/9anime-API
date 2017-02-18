@@ -68,7 +68,7 @@ def scrapingreq(year,page,season):
                 title_jp.append(truetitle)
             else:
                 title_jp.append(title[0])
-        time.sleep(0.1)
+        #time.sleep(0.1)
 
     #for wk in link:
         url2 = link[i]
@@ -124,7 +124,7 @@ def scrapingreq(year,page,season):
         else:
             yobi+=1
             dayofweek.append(yobi)
-        time.sleep(1)
+        time.sleep(0.8)
 
 
     for i in range(len(anititle)):
