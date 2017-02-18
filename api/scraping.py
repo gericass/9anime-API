@@ -68,10 +68,10 @@ def scrapingreq(year,page,season):
                 title_jp.append(truetitle)
             else:
                 title_jp.append(title[0])
-        #time.sleep(0.2)
+        time.sleep(0.1)
 
-    #for wk in link:
-        url2 = link[i]
+    for wk in link:
+        url2 = wk
         req2 = urllib.request.Request(url2, headers={'User-Agent': 'Mozilla/5.0'})
         response2 = urllib.request.urlopen(req2)
         html2 = response2.read()
@@ -117,7 +117,6 @@ def scrapingreq(year,page,season):
         hizuke += dates[1].replace(",","")
 
 
-
         yobi = datetime.strptime(hizuke,"%Y,%m,%d").weekday()
 
         if yobi == 6:
@@ -125,7 +124,7 @@ def scrapingreq(year,page,season):
         else:
             yobi+=1
             dayofweek.append(yobi)
-        time.sleep(0.2)
+        time.sleep(0.1)
 
     for i in range(len(anititle)):
         tit = anititle[i]
