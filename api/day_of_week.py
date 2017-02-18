@@ -9,9 +9,9 @@ dow =["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
 def getweekday(year,page,season,data):
     if data==1:
-         s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))[:16]
+         s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))[:16].order_by('id')
     else:
-         s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))[16:32]
+         s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))[16:].order_by('id')
     link = []
 
     for i in s:
