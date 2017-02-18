@@ -81,7 +81,7 @@ def scrapingreq(year,page,season):
 
         hi = []
 
-        for dt in soup.find_all("div",id="servers"):
+        for dt in soup2.find_all("div",id="servers"):
             for a in dt.find_all("a"):
                 hi.append(a['data-title'])
 
