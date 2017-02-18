@@ -124,7 +124,7 @@ def scrapingreq(year,page,season):
         else:
             yobi+=1
             dayofweek.append(yobi)
-        time.sleep(0.5)
+        time.sleep(1)
 
 
     for i in range(len(anititle)):
