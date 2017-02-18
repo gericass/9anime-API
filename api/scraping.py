@@ -125,7 +125,7 @@ def scrapingreq(year,page,season):
         else:
             yobi+=1
             dayofweek.append(yobi)
-        time.sleep(1)
+        time.sleep(0.2)
 
     for i in range(len(anititle)):
         tit = anititle[i]
@@ -134,7 +134,7 @@ def scrapingreq(year,page,season):
         sea = str(season)
         pg = str(page)
         yr = str(year)
-        wd = dayofweek[i]
+        wd = str(dayofweek[i])
         db = animedb(title=tit,title_jp=titj,year=yr,season=sea,weekday=wd,url=lin,page=pg)
         db.save()
 

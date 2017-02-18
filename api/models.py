@@ -24,13 +24,13 @@ class animedb(models.Model):
         ('3','木'),
         ('4','金'),
         ('5','土'),
-        ('6','日')
+        ('6','日'),
     )
     title =  models.CharField('アニメタイトル',max_length=500)
     title_jp = models.CharField('アニメタイトル（日本語）',max_length=500)
     year = models.CharField('放送年',max_length=500,choices=YEAR_SET)
     season = models.CharField('シーズン',max_length=500,choices=SEASON_SET)
-    weekday = models.CharField('曜日',max_length=500,choices=WEEKDAY_SET,default=1)
+    weekday = models.CharField('曜日',max_length=500,choices=WEEKDAY_SET,default=0)
     url = models.CharField('URL',max_length=500)
     page = models.CharField('ページ',max_length=500,default=1)
 
