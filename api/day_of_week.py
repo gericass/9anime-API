@@ -71,4 +71,4 @@ def getweekday(year,page,season):
             p.weekday = str(yobi)
             p.save()
 
-        time.sleep(0.8)
+        time.sleep(0.5)
