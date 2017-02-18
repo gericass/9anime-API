@@ -66,7 +66,7 @@ def scrapingreq(year,page,season):
                 title_jp.append(truetitle)
             else:
                 title_jp.append(title[0])
-                #time.sleep(1)
+        time.sleep(0.2)
 
     for i in range(len(anititle)):
         tit = anititle[i]
@@ -79,6 +79,6 @@ def scrapingreq(year,page,season):
         db.save()
 
     return 'done'
-    
+
   except:
-      return'error'
+      return 'error'
