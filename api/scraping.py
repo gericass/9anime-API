@@ -3,7 +3,7 @@ import urllib.request
 import time
 import re
 from api.models import animedb
-
+from datetime import datetime
 #start = time.time()
 
 def scrapingreq(year,page,season):
@@ -13,6 +13,8 @@ def scrapingreq(year,page,season):
     anititle = []
     link =[]
     title_jp = []
+    #monthday = ["月","火","水","木","金","土","日"]
+    dayofweek = []
 
     ajaurl = []
 
@@ -68,6 +70,63 @@ def scrapingreq(year,page,season):
                 title_jp.append(title[0])
         time.sleep(0.2)
 
+    for wk in link:
+        url = wk
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        response = urllib.request.urlopen(req)
+        html = response.read()
+        soup = BeautifulSoup(html, "lxml")
+
+        hizuke = ''
+
+        hi = []
+
+        for dt in soup.find_all("div",id="servers"):
+            for a in dt.find_all("a"):
+                hi.append(a['data-title'])
+
+        dates = hi[0].split(" ")
+
+        hizuke += dates[2]
+
+        if dates[0] == 'Jan':
+            hizuke += ',01,'
+        elif dates[0] == 'Feb':
+            hizuke += ',02,'
+        elif dates[0] == 'Mar':
+            hizuke += ',03,'
+        elif dates[0] == 'Apr':
+            hizuke += ',04,'
+        elif dates[0] == 'May':
+            hizuke += ',05,'
+        elif dates[0] == 'Jun':
+            hizuke += ',06,'
+        elif dates[0] == 'Jul':
+            hizuke += ',07,'
+        elif dates[0] == 'Aug':
+            hizuke += ',08,'
+        elif dates[0] == 'Sep':
+            hizuke += ',09,'
+        elif dates[0] == 'Oct':
+            hizuke += ',10,'
+        elif dates[0] == 'Nov':
+            hizuke += ',11,'
+        elif dates[0] == 'Dec':
+            hizuke += ',12,'
+
+        hizuke += dates[1].replace(",","")
+
+        print(hizuke)
+
+        yobi = datetime.strptime(hizuke,"%Y,%m,%d").weekday()
+
+        if yobi == 6:
+            dayofweek.append(yobi)
+        else:
+            yobi+=1
+            dayofweek.append(yobi)
+
+
     for i in range(len(anititle)):
         tit = anititle[i]
         lin = link[i]
@@ -75,7 +134,8 @@ def scrapingreq(year,page,season):
         sea = str(season)
         pg = str(page)
         yr = str(year)
-        db = animedb(title=tit,title_jp=titj,year=yr,season=sea,url=lin,page=pg)
+        wd = dayofweek[i]
+        db = animedb(title=tit,title_jp=titj,year=yr,season=sea,weekday=wd,url=lin,page=pg)
         db.save()
 
     return 'done'
