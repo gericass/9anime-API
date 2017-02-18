@@ -34,8 +34,8 @@ def scrapingreq(year,page,season):
         # time.sleep(1)
 
 
-    for jptitle in ajaurl:
-        url = jptitle
+    for i in range(len(ajaurl)):
+        url = ajaurl[i]
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib.request.urlopen(req)
         html = response.read()
@@ -68,14 +68,14 @@ def scrapingreq(year,page,season):
                 title_jp.append(truetitle)
             else:
                 title_jp.append(title[0])
-        time.sleep(0.2)
+        #time.sleep(0.2)
 
-    for wk in link:
-        url = wk
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-        response = urllib.request.urlopen(req)
-        html = response.read()
-        soup = BeautifulSoup(html, "lxml")
+    #for wk in link:
+        url2 = link[i]
+        req2 = urllib.request.Request(url2, headers={'User-Agent': 'Mozilla/5.0'})
+        response2 = urllib.request.urlopen(req2)
+        html2 = response2.read()
+        soup2 = BeautifulSoup(html2, "lxml")
 
         hizuke = ''
 
@@ -116,7 +116,7 @@ def scrapingreq(year,page,season):
 
         hizuke += dates[1].replace(",","")
 
-        print(hizuke)
+
 
         yobi = datetime.strptime(hizuke,"%Y,%m,%d").weekday()
 
