@@ -18,6 +18,7 @@ def getweekday(year,page,season,data):
         link.append(i.url)
 
     for lk in link:
+      try:
         url = lk
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         response = urllib.request.urlopen(req)
@@ -76,4 +77,6 @@ def getweekday(year,page,season,data):
             p.weekday = dow[yobi]
             p.save()
         time.sleep(1)
+      except:
+          pass
     return 'yes'

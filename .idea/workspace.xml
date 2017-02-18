@@ -42,8 +42,8 @@
       <file leaf-file-name="day_of_week.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/day_of_week.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="75" column="33" lean-forward="false" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+            <state relative-caret-position="504">
+              <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
               </folding>
@@ -132,10 +132,10 @@
         <option value="$PROJECT_DIR$/api/serializer.py" />
         <option value="$PROJECT_DIR$/animeapi/urls.py" />
         <option value="$PROJECT_DIR$/api/views.py" />
-        <option value="$PROJECT_DIR$/api/day_of_week.py" />
         <option value="$PROJECT_DIR$/api/models.py" />
         <option value="$PROJECT_DIR$/api/scraping.py" />
         <option value="$PROJECT_DIR$/animeapi/settings.py" />
+        <option value="$PROJECT_DIR$/api/day_of_week.py" />
       </list>
     </option>
   </component>
@@ -925,12 +925,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1487245658772</updated>
-      <workItem from="1487245663083" duration="39732000" />
+      <workItem from="1487245663083" duration="40311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39732000" />
+    <option name="totallyTimeSpent" value="40311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
@@ -1092,8 +1092,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/day_of_week.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
-          <caret line="75" column="33" lean-forward="false" selection-start-line="75" selection-start-column="33" selection-end-line="75" selection-end-column="33" />
+        <state relative-caret-position="504">
+          <caret line="80" column="14" lean-forward="false" selection-start-line="80" selection-start-column="14" selection-end-line="80" selection-end-column="14" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
