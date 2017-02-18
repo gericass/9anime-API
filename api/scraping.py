@@ -7,7 +7,7 @@ from api.models import animedb
 #start = time.time()
 
 def scrapingreq(year,page,season):
-  try:
+ # try:
     animedb.objects.filter(year=str(year),season=str(season),page=str(page)).delete()
 
     anititle = []
@@ -80,5 +80,5 @@ def scrapingreq(year,page,season):
 
     return 'done'
 
-  except:
-      return 'error'
+  #except:
+   #   return 'error'
