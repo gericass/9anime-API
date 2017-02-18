@@ -26,11 +26,11 @@ urlpatterns = [
     url(r'^(?P<year>\d+)/Fall/(?P<page>\d+)/$', views.scraping,{'season': 'Fall'}),
     url(r'^(?P<year>\d+)/Unknow/(?P<page>\d+)/$', views.scraping,{'season': 'Unknow'}),
 
-    url(r'^week/(?P<year>\d+)/Winter/(?P<page>\d+)/$', views.week,{'season': 'Winter'}),
-    url(r'^week(?P<year>\d+)/Spring/(?P<page>\d+)/$', views.week,{'season': 'Spring'}),
-    url(r'^week/(?P<year>\d+)/Summer/(?P<page>\d+)/$', views.week,{'season': 'Summer'}),
-    url(r'^week/(?P<year>\d+)/Fall/(?P<page>\d+)/$', views.week,{'season': 'Fall'}),
-    url(r'^week/(?P<year>\d+)/Unknow/(?P<page>\d+)/$', views.week,{'season': 'Unknow'}),
+    url(r'^week/(?P<data>\d+)/(?P<year>\d+)/Winter/(?P<page>\d+)/$', views.week,{'season': 'Winter'}),
+    url(r'^week/(?P<data>\d+)(?P<year>\d+)/Spring/(?P<page>\d+)/$', views.week,{'season': 'Spring'}),
+    url(r'^week/(?P<data>\d+)/(?P<year>\d+)/Summer/(?P<page>\d+)/$', views.week,{'season': 'Summer'}),
+    url(r'^week/(?P<data>\d+)/(?P<year>\d+)/Fall/(?P<page>\d+)/$', views.week,{'season': 'Fall'}),
+    url(r'^week/(?P<data>\d+)/(?P<year>\d+)/Unknow/(?P<page>\d+)/$', views.week,{'season': 'Unknow'}),
 
     url(r'^api/', include(anime_router.urls)),
 ]

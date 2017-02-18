@@ -5,8 +5,13 @@ import time
 import re
 from datetime import datetime
 
-def getweekday(year,page,season):
-    s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))
+dow =["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
+
+def getweekday(year,page,season,data):
+    if data==1:
+         s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))[:16]
+    else:
+         s = animedb.objects.filter(year=str(year),season=str(season),page=str(page))[16:]
     link = []
 
     for i in s:
@@ -62,13 +67,13 @@ def getweekday(year,page,season):
 
         if yobi == 6:
             yobi = 0
-            p = animedb.objects.filter(url=lk).first()
-            p.weekday = str(yobi)
+            p = animedb.objects.get(url=lk)#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
+            p.weekday = dow[yobi]
             p.save()
         else:
             yobi+=1
-            p = animedb.objects.filter(url=lk).first()
-            p.weekday = str(yobi)
+            p = animedb.objects.get(url=lk)#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
+            p.weekday = dow[yobi]
             p.save()
-
-        time.sleep(0.5)
+        time.sleep(1)
+    return 'yes'

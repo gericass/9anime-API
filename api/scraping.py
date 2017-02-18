@@ -79,7 +79,7 @@ def scrapingreq(year,page,season):
         sea = str(season)
         pg = str(page)
         yr = str(year)
-        wd = str(0)
+        wd = 'Mon'
         db = animedb(title=tit,title_jp=titj,year=yr,season=sea,weekday=wd,url=lin,page=pg)
         db.save()
 

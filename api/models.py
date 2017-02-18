@@ -18,14 +18,15 @@ class animedb(models.Model):
         ('2013','2013'),
     )
     WEEKDAY_SET = (
-        ('0','月'),
-        ('1','火'),
-        ('2','水'),
-        ('3','木'),
-        ('4','金'),
-        ('5','土'),
-        ('6','日'),
+        ('Mon','月'),
+        ('Tue','火'),
+        ('Wed','水'),
+        ('Thu','木'),
+        ('Fri','金'),
+        ('Sat','土'),
+        ('Sun','日'),
     )
+
     title =  models.CharField('アニメタイトル',max_length=500)
     title_jp = models.CharField('アニメタイトル（日本語）',max_length=500)
     year = models.CharField('放送年',max_length=500,choices=YEAR_SET)
@@ -36,6 +37,5 @@ class animedb(models.Model):
 
     def __str__(self):
         return self.title_jp
-
 
 

@@ -14,8 +14,9 @@ def scraping(request,year,page,season):
     res = scrapingreq(str(year),str(page),str(season))
     return HttpResponse(res)
 
-def week(request,year,page,season):
-    res = getweekday(str(year),str(page),str(season))
+def week(request,data,year,page,season):
+    res = getweekday(str(year),str(page),str(season),int(data))
+    #res2 = getweekday(str(year),str(page),str(season),res)
     return HttpResponse(res)
 
 class animedbViewSet(viewsets.ModelViewSet):
