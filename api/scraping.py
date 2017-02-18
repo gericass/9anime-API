@@ -7,7 +7,7 @@ from datetime import datetime
 #start = time.time()
 
 def scrapingreq(year,page,season):
- # try:
+  try:
     animedb.objects.filter(year=str(year),season=str(season),page=str(page)).delete()
 
     anititle = []
@@ -125,7 +125,7 @@ def scrapingreq(year,page,season):
         else:
             yobi+=1
             dayofweek.append(yobi)
-        time.sleep(0.2)
+        time.sleep(1)
 
     for i in range(len(anititle)):
         tit = anititle[i]
@@ -140,5 +140,5 @@ def scrapingreq(year,page,season):
 
     return 'done'
 
-  #except:
-   #   return 'error'
+  except:
+      return 'error'
