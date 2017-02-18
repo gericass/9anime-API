@@ -14,7 +14,7 @@ def scrapingreq(year,page,season):
     link =[]
     title_jp = []
     #monthday = ["月","火","水","木","金","土","日"]
-    dayofweek = []
+
 
     ajaurl = []
 
