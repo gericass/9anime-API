@@ -125,7 +125,7 @@ def scrapingreq(year,page,season):
         else:
             yobi+=1
             dayofweek.append(yobi)
-
+        time.sleep(0.2)
 
     for i in range(len(anititle)):
         tit = anititle[i]
