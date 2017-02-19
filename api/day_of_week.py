@@ -12,6 +12,7 @@ def getweekday(year,page,season,data):
          s = animedb.objects.filter(year=str(year),season=str(season),page=str(page)).order_by('id')[:16]
     else:
          s = animedb.objects.filter(year=str(year),season=str(season),page=str(page)).order_by('id')[16:]
+
     link = []
 
     for i in s:

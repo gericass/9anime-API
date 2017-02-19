@@ -31,7 +31,6 @@ def scrapingreq(year,page,season):
 
     for aja in soup.find_all(class_="poster"):
         ajaurl.append('https://9anime.to/'+aja['data-tip'])
-        # time.sleep(1)
 
 
     for i in range(len(ajaurl)):
