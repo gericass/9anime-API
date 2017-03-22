@@ -10,6 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
+
+#C:\Users\b1016126\Documents\apitestenv
+
 import os
 import dj_database_url
 
