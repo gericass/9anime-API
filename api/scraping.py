@@ -13,6 +13,7 @@ def scrapingreq(year,page,season):
     anititle = []
     link =[]
     title_jp = []
+    status = []
     #monthday = ["月","火","水","木","金","土","日"]
 
 
@@ -49,6 +50,8 @@ def scrapingreq(year,page,season):
 
         pre2 = pre[4].replace("\n","")
 
+        status.append(pre[1])
+
         title = re.sub('\s{2}',"",pre2).split("; ")
         if len(title)>=2:
             if int(len(title[len(title)-1]))>=50:
@@ -75,11 +78,12 @@ def scrapingreq(year,page,season):
         tit = anititle[i]
         lin = link[i]
         titj = title_jp[i]
+        sta = status[i]
         sea = str(season)
         pg = str(page)
         yr = str(year)
-        wd = 'Mon'
-        db = animedb(title=tit,title_jp=titj,year=yr,season=sea,weekday=wd,url=lin,page=pg)
+        wd = '--'
+        db = animedb(title=tit,title_jp=titj,year=yr,season=sea,weekday=wd,status=sta,url=lin,page=pg)
         db.save()
 
     return 'done'

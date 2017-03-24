@@ -4,4 +4,4 @@ from .models import animedb
 class animedbSerializer(serializers.ModelSerializer):
     class Meta:
         model = animedb
-        fields = ('title','title_jp','year','season','weekday','url')
+        fields = ('title','title_jp','year','season','weekday','status','url')
