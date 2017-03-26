@@ -83,6 +83,9 @@ def scrapingreq(year,page,season):
         pg = str(page)
         yr = str(year)
         wd = '--'
+        if len(tit)>500:
+            continue
+
         db = animedb(title=tit,title_jp=titj,year=yr,season=sea,weekday=wd,status=sta,url=lin,page=pg)
         db.save()
 
