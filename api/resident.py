@@ -35,6 +35,8 @@ def awake():
         print("awaking server")
         try:
             requests.get("https://nineanimeapi.herokuapp.com/admin/")
+            print("server awaked!!")
         except:
             pass
+
         time.sleep(600)
