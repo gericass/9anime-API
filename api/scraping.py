@@ -8,7 +8,6 @@ from datetime import datetime
 
 def scrapingreq(year,page,season):
   #try:
-    print(season)
     animedb.objects.filter(year=str(year),season=str(season),page=str(page)).delete()
 
     anititle = []
