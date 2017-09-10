@@ -9,17 +9,21 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 
 import os
 import time
-from api.resident import process
+#import api.resident こいつインポートするとバグる
 import threading
 
 from django.core.wsgi import get_wsgi_application
+
+
+def process():
+    print("LOG!!!!!!!!!!!!!!!!!!!!")
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "animeapi.settings")
 
 application = get_wsgi_application()
 
-#t = threading.Thread(target=logger.process)
-#t.start()
+t = threading.Thread(target=process)
+t.start()
 
 
-print("yess!!!!!!!!!!!!!!!!!!!!!!!!")
+
