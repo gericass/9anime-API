@@ -3,7 +3,7 @@ import api.scraping as sc
 import api.day_of_week as DoW
 
 def process():
-    while True:
+    #while True:
         print("yes")
         time.sleep(5)
 
