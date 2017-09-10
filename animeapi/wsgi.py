@@ -11,11 +11,18 @@ import os
 import time
 #import api.resident こいつインポートするとバグる
 import threading
-import api.scraping as sc
-import api.day_of_week as DoW
 
 from django.core.wsgi import get_wsgi_application
 
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "animeapi.settings")
+
+application = get_wsgi_application()
+
+
+
+import api.scraping as sc
+import api.day_of_week as DoW
 
 def process():
     season = ["Winter","Spring","Summer","Fall","Unknow"]
@@ -40,9 +47,6 @@ def process():
                             print(str(i)+str(j)+k+str(m)+" error")
         time.sleep(86400) #一日(86400秒)おきに実行
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "animeapi.settings")
-
-application = get_wsgi_application()
 
 t = threading.Thread(target=process)
 t.start()
