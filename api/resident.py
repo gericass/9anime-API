@@ -30,5 +30,9 @@ def process():
 
 def awake():
     while True:
-        requests.get("https://nineanimeapi.herokuapp.com/admin/")
-        time.sleep(600)
+        print("awaking server")
+        try:
+            requests.get("https://nineanimeapi.herokuapp.com/admin/")
+            time.sleep(600)
+        except:
+            pass
