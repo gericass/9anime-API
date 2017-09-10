@@ -12,10 +12,12 @@ import api.resident as logger
 import threading
 
 from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "animeapi.settings")
 
 application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
 
 t = threading.Thread(target=logger.process)
 t.start()

@@ -3,7 +3,9 @@ import api.scraping as sc
 import api.day_of_week as DoW
 
 def process():
-    print("yes")
+    while True:
+        print("yes")
+        time.sleep(5)
 
     #season = ["Winter","Spring","Summer","Fall","Unknow"]
     #page = [1,2,3,4,5]
