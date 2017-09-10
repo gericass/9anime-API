@@ -23,4 +23,4 @@ def process():
                             DoW.getweekday(j,m,k,i)
                         except:
                             print(str(i)+str(j)+k+str(m)+" error")
-        time.sleep(86400)
+        time.sleep(86400) #一日(86400秒)おきに実行

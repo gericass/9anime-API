@@ -28,7 +28,7 @@ class animedb(models.Model):
         ('Sun','日'),
     )
 
-    title =  models.CharField('アニメタイトル',max_length=500)
+    title = models.CharField('アニメタイトル',max_length=500)
     title_jp = models.CharField('アニメタイトル（日本語）',max_length=500)
     year = models.CharField('放送年',max_length=500,choices=YEAR_SET)
     season = models.CharField('シーズン',max_length=500,choices=SEASON_SET)
