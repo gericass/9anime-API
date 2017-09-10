@@ -1,9 +1,9 @@
 import time
+import requests
 import api.scraping as sc
 import api.day_of_week as DoW
 
 def process():
-
     season = ["Winter","Spring","Summer","Fall","Unknow"]
     page = [1,2,3,4,5]
     page2 = [1,2]
@@ -27,3 +27,8 @@ def process():
                             print(str(i)+str(j)+k+str(m)+" error")
         print("End!!!")
         time.sleep(86400) #一日(86400秒)おきに実行
+
+def awake():
+    while True:
+        requests.get("https://nineanimeapi.herokuapp.com/admin/")
+        time.sleep(600)

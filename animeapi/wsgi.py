@@ -21,10 +21,13 @@ application = get_wsgi_application()
 
 
 
-import api.resident as logger
+import api.resident as logger #[重要]アプリケーション起動後にimport
 
-t = threading.Thread(target=logger.process)
+t = threading.Thread(target=logger.process) #スクレイピングの定期実行
 t.start()
+
+p = threading.Thread(target=logger.awake) #サーバーへの定期アクセス
+p.start()
 
 
 
