@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 """
 
 import os
-import api.resident as logger
+#import api.resident as logger
 #import threading
 
 from django.core.wsgi import get_wsgi_application
@@ -20,4 +20,6 @@ application = get_wsgi_application()
 #t = threading.Thread(target=logger.process)
 #t.start()
 
-logger.process()
+#logger.process()
+
+print("yess!!!!!!!!!!!!!!!!!!!!!!!!")
