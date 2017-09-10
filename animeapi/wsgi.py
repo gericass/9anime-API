@@ -18,5 +18,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "animeapi.settings")
 
 application = get_wsgi_application()
 
+'''
 t = threading.Thread(target=r.process)
 t.start()
+'''
