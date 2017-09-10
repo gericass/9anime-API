@@ -16,7 +16,9 @@ from django.core.wsgi import get_wsgi_application
 
 
 def process():
-    print("LOG!!!!!!!!!!!!!!!!!!!!")
+    while True:
+        print("LOG!!!!!!!!!!!!!!!!!!!!")
+        time.sleep(5)
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "animeapi.settings")
 
