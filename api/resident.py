@@ -15,6 +15,7 @@ def process():
                 for k in page:
                     try:
                         sc.scrapingreq(i,k,j)
+                        print(str(i)+j+str(k))
                     except:
                         print(str(i)+j+str(k)+" error")
         for i in page2:
@@ -23,6 +24,7 @@ def process():
                     for m in page:
                         try:
                             DoW.getweekday(j,m,k,i)
+                            print(str(i)+str(j)+k+str(m))
                         except:
                             print(str(i)+str(j)+k+str(m)+" error")
         print("End!!!")
