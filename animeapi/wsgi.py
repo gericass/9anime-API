@@ -8,8 +8,8 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 """
 
 import os
-import api.resident as logger
-import threading
+#import api.resident as logger
+#import threading
 
 from django.core.wsgi import get_wsgi_application
 
