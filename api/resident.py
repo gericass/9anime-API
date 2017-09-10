@@ -24,9 +24,9 @@ def process():
                     for m in page:
                         try:
                             DoW.getweekday(j,m,k,i)
-                            print(str(i)+str(j)+k+str(m))
+                            print("DoW: "+str(i)+str(j)+k+str(m))
                         except:
-                            print(str(i)+str(j)+k+str(m)+" error")
+                            print("DoW: "+str(i)+str(j)+k+str(m)+" error")
         print("End!!!")
         time.sleep(86400) #一日(86400秒)おきに実行
 
@@ -35,6 +35,6 @@ def awake():
         print("awaking server")
         try:
             requests.get("https://nineanimeapi.herokuapp.com/admin/")
-            time.sleep(600)
         except:
             pass
+        time.sleep(600)
