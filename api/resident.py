@@ -9,6 +9,7 @@ def process():
     page2 = [1,2]
     year = [2017]#,2016,2015,2014,2013]
     while True:
+        print("Start Scraping!!!")
         for i in year:
             for j in season:
                 for k in page:
@@ -24,4 +25,5 @@ def process():
                             DoW.getweekday(j,m,k,i)
                         except:
                             print(str(i)+str(j)+k+str(m)+" error")
+        print("End!!!")
         time.sleep(86400) #一日(86400秒)おきに実行
