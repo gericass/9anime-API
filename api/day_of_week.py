@@ -77,7 +77,8 @@ def getweekday(year,page,season,data):
             p = animedb.objects.get(url=lk)#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
             p.weekday = dow[yobi]
             p.save()
-        time.sleep(1)
+        time.sleep(2)
       except:
-          print("cannot got weekday: "+lk)
+        print("cannot got weekday: "+lk)
+        time.sleep(2)
     return 'yes'
