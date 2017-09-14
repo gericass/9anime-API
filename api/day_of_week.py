@@ -25,6 +25,7 @@ def getweekday(year,page,season,data):
         response = urllib.request.urlopen(req)
         html = response.read()
         soup = BeautifulSoup(html, "lxml")
+        print(soup.prettify())
 
         hizuke = ''
 
