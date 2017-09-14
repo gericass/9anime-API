@@ -9,7 +9,6 @@ def process():
     page = [1,2,3,4,5]
     page2 = [1,2]
     year = [2017]#,2016,2015,2014,2013]
-    animedb.objects.filter(year="2017").delete()
     while True:
         print("Start Scraping!!!")
         for i in year:
