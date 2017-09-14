@@ -9,6 +9,8 @@ from .day_of_week import getweekday
 # Create your views here.
 
 
+def initdb(request):
+    animedb.objects.filter(year="2017").delete()
 
 def scraping(request,year,page,season):
     res = scrapingreq(str(year),str(page),str(season))

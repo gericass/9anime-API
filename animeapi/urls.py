@@ -21,6 +21,8 @@ from api.urls import router as anime_router
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
+    url(r'^$',views.initdb),
+
     url(r'^(?P<year>\d+)/Winter/(?P<page>\d+)/$', views.scraping,{'season': 'Winter'}),
     url(r'^(?P<year>\d+)/Spring/(?P<page>\d+)/$', views.scraping,{'season': 'Spring'}),
     url(r'^(?P<year>\d+)/Summer/(?P<page>\d+)/$', views.scraping,{'season': 'Summer'}),
