@@ -67,7 +67,6 @@ def getweekday(year,page,season,data):
         hizuke += dates[1].replace(",","")
 
         yobi = datetime.strptime(hizuke,"%Y,%m,%d").weekday()
-        print(dow[yobi])
 
         if yobi == 6:
             yobi = 0
@@ -76,6 +75,8 @@ def getweekday(year,page,season,data):
             p.save()
         else:
             yobi+=1
+            if yobi >6:
+                print("over 6: "+lk)
             p = animedb.objects.get(url=lk)#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
             p.weekday = dow[yobi]
             p.save()
