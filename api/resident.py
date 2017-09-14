@@ -28,6 +28,7 @@ def process():
                             print("DoW: "+str(i)+str(j)+k+str(m))
                         except:
                             print("DoW: "+str(i)+str(j)+k+str(m)+" error")
+        animedb.objects.filter(weekday="--").delete()
         print("End!!!")
         time.sleep(86400) #一日(86400秒)おきに実行
 
