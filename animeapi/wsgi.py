@@ -26,6 +26,8 @@ import api.resident as logger #[重要]アプリケーション起動後にimpor
 #t = threading.Thread(target=logger.process) #スクレイピングの定期実行
 #t.start()
 
+logger.process()
+
 p = threading.Thread(target=logger.awake) #サーバーへの定期アクセス
 p.start()
 
