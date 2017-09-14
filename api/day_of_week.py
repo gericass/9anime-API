@@ -67,6 +67,7 @@ def getweekday(year,page,season,data):
         hizuke += dates[1].replace(",","")
 
         yobi = datetime.strptime(hizuke,"%Y,%m,%d").weekday()
+        print(dow[yobi])
 
         if yobi == 6:
             yobi = 0
