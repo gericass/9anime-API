@@ -79,8 +79,8 @@ def getweekday(year,page,season,data):
             p.weekday = dow[yobi]
             p.save()
         print("got weekday: "+lk)
-        time.sleep(2)
+        time.sleep(1)
       except:
         print("cannot got weekday: "+lk)
-        time.sleep(2)
+        time.sleep(1)
     return 'yes'
