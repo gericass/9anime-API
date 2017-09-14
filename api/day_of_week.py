@@ -70,14 +70,12 @@ def getweekday(year,page,season,data):
 
         if yobi == 6:
             yobi = 0
-            p = animedb.objects.get(url=lk)#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
+            p = animedb.objects.filter(url=lk).first()#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
             p.weekday = dow[yobi]
             p.save()
         else:
             yobi+=1
-            if yobi >6:
-                print("over 6: "+lk)
-            p = animedb.objects.get(url=lk)#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
+            p = animedb.objects.filter(url=lk).first()#filter(url=lk,year=str(year),season=str(season),page=str(page)).get()
             p.weekday = dow[yobi]
             p.save()
         print("got weekday: "+lk)
