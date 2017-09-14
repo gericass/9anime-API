@@ -11,6 +11,7 @@ from .day_of_week import getweekday
 
 def initdb(request):
     animedb.objects.filter(year="2017").delete()
+    return HttpResponse("init db 2017")
 
 def scraping(request,year,page,season):
     res = scrapingreq(str(year),str(page),str(season))
