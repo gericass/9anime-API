@@ -79,5 +79,5 @@ def getweekday(year,page,season,data):
             p.save()
         time.sleep(1)
       except:
-          pass
+          print("cannot got weekday: "+lk)
     return 'yes'
